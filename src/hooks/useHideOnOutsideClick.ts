@@ -8,13 +8,8 @@ const useHideOnOutsideClick = (): [
   const elementRef = useRef<HTMLDivElement>(null);
   const [showElement, setShowElement] = useState<boolean>(false);
 
-  const handleClickOutside = (event: MouseEvent) => {
-    if (
-      elementRef.current &&
-      !elementRef.current.contains(event.target as Node)
-    ) {
-      setShowElement(false);
-    }
+  const handleClickOutside = () => {
+    setShowElement(false);
   };
 
   useEffect(() => {
